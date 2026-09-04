@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0"
+    xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"> 
+
+    <persistence-unit name="paa">
+<!--        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver" />
+            <property name="jakarta.persistence.jdbc.url"    value="jdbc:mariadb://localhost/parking?createDatabaseIfNotExist=true" />
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+
+	<!--
+	    En caso de usar una configuración de mariadb en la que se hay creado un usuario, deberá descomentar la primera línea.
+	    Si, además el usuario tiene contraseña, también la segunda linea.
+	    Los campos value="" deberán ser reemplazados por los valores correctos
+	-->
+        <!--
+            <property name="jakarta.persistence.jdbc.user" value="USER"/>
+            <property name="jakarta.persistence.jdbc.password" value="PASS"/>
+	-->
+
+        </properties>
+    </persistence-unit>
+</persistence>
+
